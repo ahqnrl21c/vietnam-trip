@@ -132,7 +132,22 @@ html{-webkit-text-size-adjust:100%}button,a{-webkit-tap-highlight-color:transpar
  .dashboard .daybanner .daytext h3{font-size:22px!important;margin:10px 0 5px!important}
  .dashboard .daybanner .daytext p{font-size:10px!important}
 }
-</style></head><body>
+</style>
+<style id="day-banner-center-fix-2026">
+/* Fill the banner edge to edge on both mobile and desktop. */
+.dashboard .daybanner{height:clamp(170px,25vw,260px)!important;display:block!important;overflow:hidden!important;background:#1b304a!important;}
+.dashboard .daybanner::before{display:none!important;content:none!important;}
+.dashboard .daybanner img#dayimg{position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:50% 50%!important;max-width:none!important;max-height:none!important;margin:0!important;padding:0!important;border:0!important;}
+.dashboard .daybanner .daytext{inset:0 auto 0 0!important;justify-content:center!important;max-width:82%!important;}
+@media(max-width:560px){
+ .dashboard .daybanner{height:185px!important;}
+ .dashboard .daybanner img#dayimg{object-fit:cover!important;object-position:center center!important;}
+ .dashboard .daybanner .daytext{padding:13px 16px!important;width:88%!important;}
+ .dashboard .daybanner .daytext h3{font-size:24px!important;margin:8px 0 5px!important;}
+ .dashboard .daybanner .daytext p{font-size:11px!important;}
+}
+</style>
+</head><body>
 <div class="dashboard" id="dashboard">
 <aside class="sidebar"><div class="brand"><span class="plane">✈</span>Hanoi · Sapa ·<br>Ninh Binh<br><small>Travel Guidebook</small></div><nav class="sidenav" id="dashnav">
 <button class="active" data-page="home"><span class="ico">⌂</span>홈</button><button data-page="schedule"><span class="ico">▦</span>여행 일정</button><button data-page="places"><span class="ico">♧</span>방문 명소</button><button data-page="stay"><span class="ico">▤</span>숙소</button><button data-page="food"><span class="ico">♨</span>맛집</button><button data-page="map"><span class="ico">◫</span>지도</button><button data-page="check"><span class="ico">☑</span>체크리스트</button><button data-page="memo"><span class="ico">▤</span>메모</button><button data-page="photos"><span class="ico">▧</span>내 사진</button><button data-page="settings"><span class="ico">⚙</span>설정 / 백업</button></nav><div class="side-art">♜</div></aside>
