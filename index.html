@@ -222,7 +222,56 @@ html{-webkit-text-size-adjust:100%}button,a{-webkit-tap-highlight-color:transpar
 }
 @media(max-width:375px){.dashboard .daybanner{height:110px!important;min-height:110px!important;max-height:110px!important}}
 </style>
-</head><body>
+<style id="photo-layout-v4">
+/* Final photographic layout: one image, one frame, no letterboxing. */
+.dashboard .daybanner{
+ display:block!important;position:relative!important;width:100%!important;
+ height:154px!important;min-height:0!important;max-height:154px!important;
+ margin:9px 0 13px!important;padding:0!important;overflow:hidden!important;
+ border-radius:12px!important;background:#16324d!important;
+ box-shadow:none!important;isolation:isolate!important;
+}
+.dashboard .daybanner>img#dayimg{
+ display:block!important;position:absolute!important;inset:0!important;
+ width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;
+ margin:0!important;padding:0!important;border:0!important;border-radius:0!important;
+ object-fit:cover!important;object-position:50% 50%!important;
+ transform:none!important;opacity:1!important;filter:none!important;
+}
+.dashboard .daybanner:before{display:none!important;content:none!important}
+.dashboard .daybanner:after{
+ content:""!important;position:absolute!important;inset:0!important;z-index:1!important;
+ background:linear-gradient(90deg,rgba(7,19,36,.80) 0%,rgba(7,19,36,.32) 51%,transparent 88%)!important;
+ pointer-events:none!important;
+}
+.dashboard .daybanner .daytext{
+ display:flex!important;position:absolute!important;inset:0 auto 0 0!important;z-index:2!important;
+ width:90%!important;max-width:90%!important;margin:0!important;padding:12px 17px!important;
+ flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;
+ background:none!important;color:#fff!important;text-align:left!important;
+}
+.dashboard .daybanner .daytext small{
+ display:inline-block!important;font-size:9px!important;line-height:1.3!important;
+ color:#fff!important;background:#091e36a8!important;border:1px solid #ffffff91!important;
+ border-radius:25px!important;padding:3px 8px!important;letter-spacing:.1px!important;
+}
+.dashboard .daybanner .daytext h3{
+ display:block!important;font-size:23px!important;line-height:1.2!important;
+ margin:6px 0 3px!important;color:#fff!important;font-weight:800!important;
+ text-shadow:0 1px 4px #0008!important;
+}
+.dashboard .daybanner .daytext p{
+ display:block!important;font-size:11px!important;line-height:1.4!important;
+ margin:0!important;color:#fff!important;
+}
+@media(max-width:700px){
+ .dashboard .daybanner{height:108px!important;min-height:108px!important;max-height:108px!important;margin:8px 0 10px!important}
+ .dashboard .daybanner .daytext{padding:8px 12px!important}
+ .dashboard .daybanner .daytext h3{font-size:19px!important;margin:4px 0 2px!important}
+ .dashboard .daybanner .daytext p{font-size:10px!important}
+ .dashboard .daybanner .daytext small{font-size:8px!important;padding:2px 6px!important}
+}
+</style></head><body>
 <div class="dashboard" id="dashboard">
 <aside class="sidebar"><div class="brand"><span class="plane">✈</span>Hanoi · Sapa ·<br>Ninh Binh<br><small>Travel Guidebook</small></div><nav class="sidenav" id="dashnav">
 <button class="active" data-page="home"><span class="ico">⌂</span>홈</button><button data-page="schedule"><span class="ico">▦</span>여행 일정</button><button data-page="places"><span class="ico">♧</span>방문 명소</button><button data-page="stay"><span class="ico">▤</span>숙소</button><button data-page="food"><span class="ico">♨</span>맛집</button><button data-page="map"><span class="ico">◫</span>지도</button><button data-page="check"><span class="ico">☑</span>체크리스트</button><button data-page="memo"><span class="ico">▤</span>메모</button><button data-page="photos"><span class="ico">▧</span>내 사진</button><button data-page="settings"><span class="ico">⚙</span>설정 / 백업</button></nav><div class="side-art">♜</div></aside>
@@ -240,7 +289,7 @@ html{-webkit-text-size-adjust:100%}button,a{-webkit-tap-highlight-color:transpar
 <section class="page inner-page panel" id="page-settings"><h2>⚙ 설정 / 백업</h2><p>여행 일정, 사진, 메모, 체크리스트를 JSON 파일로 백업하거나 복원할 수 있습니다.</p><div class="region-edit"><button id="full-backup">📦 전체 백업</button><button id="full-restore-btn">📥 전체 복원</button><button onclick="backup()">기존 일정만 백업</button></div><input id="full-restore" type="file" accept="application/json" hidden><p class="statusline">직접 올린 사진은 브라우저 저장 용량 제한에 영향을 받을 수 있습니다. 정기적으로 백업하세요.</p></section>
 <footer class="dash-foot">OUR FAMILY · HANOI / SAPA / NINH BINH · 2026</footer></div></div></div>
 <div class="app"><header class="hero"><img class="heroimg" src="icon-512.png" alt="하노이 기찻길" onerror="this.onerror=null;this.src='icon-512.png'"><div class="herotop"><span>OUR PRIVATE JOURNEY</span><span>VIETNAM · 2026</span></div><div class="herobottom"><div class="kicker">A JOURNEY TO REMEMBER</div><h1>하노이 · 사파<br>그리고 닌빈</h1><p>2026. 12. 17 — 12. 26 &nbsp; | &nbsp; 가족 4명의 특별한 10일</p><div class="herofoot"><span>✦ 10 DAYS</span><span>⌁ 3 DESTINATIONS</span><span>♡ FAMILY TRIP</span></div></div></header><main class="content">
-<section id="schedule" class="view on"><div class="sectionlabel">01 / YOUR JOURNEY</div><div class="hrow"><h2>우리의 여행 일정 <span style="font-size:10px;color:#8393a9;font-weight:500">v3 · 날짜별 보기</span></h2><button class="softbtn" onclick="backup()">↥ 백업</button></div><div class="dates" id="dates"></div><div class="daybanner"><img id="dayimg" alt="여행지 풍경"><div class="daytext"><small id="daynum"></small><h3 id="daytitle"></h3><p id="daysub"></p></div></div><div class="day-filter-heading"><strong>이날의 일정</strong><span id="day-filter-count"></span></div><div class="day-filter-bar" id="day-filter-bar"></div><div class="timeline" id="events"></div><button class="add" onclick="openEditor()">＋ 내 일정 직접 추가하기</button><div class="note">💡 역사 유적지는 <b>관광 해설</b>을 눌러 한국어 설명과 관람 팁을 확인하세요. 판시판 일정은 당일 날씨에 따라 변경하세요.</div></section>
+<section id="schedule" class="view on"><div class="sectionlabel">01 / YOUR JOURNEY</div><div class="hrow"><h2>우리의 여행 일정 <span style="font-size:10px;color:#8393a9;font-weight:500">v4 · 사진 조정</span></h2><button class="softbtn" onclick="backup()">↥ 백업</button></div><div class="dates" id="dates"></div><div class="daybanner"><img id="dayimg" alt="여행지 풍경"><div class="daytext"><small id="daynum"></small><h3 id="daytitle"></h3><p id="daysub"></p></div></div><div class="day-filter-heading"><strong>이날의 일정</strong><span id="day-filter-count"></span></div><div class="day-filter-bar" id="day-filter-bar"></div><div class="timeline" id="events"></div><button class="add" onclick="openEditor()">＋ 내 일정 직접 추가하기</button><div class="note">💡 역사 유적지는 <b>관광 해설</b>을 눌러 한국어 설명과 관람 팁을 확인하세요. 판시판 일정은 당일 날씨에 따라 변경하세요.</div></section>
 <section id="explore" class="view"><div class="sectionlabel">02 / CULTURE & HERITAGE</div><div class="hrow"><h2>여행지 이야기</h2></div><div class="featurehero"><img src="icon-512.png" alt="닌빈 항무아 전망대" onerror="this.style.display='none'"><div><h3>여행의 깊이를 더하는 이야기</h3><p>유적지의 역사부터 꼭 봐야 할 건축물까지, 현장에서 읽는 한국어 가이드입니다.</p></div></div><div class="collection" id="guidelist"></div></section>
 <section id="food" class="view"><div class="sectionlabel">03 / TASTE OF VIETNAM</div><div class="hrow"><h2>맛집 & 카페</h2></div><div class="food-filter-label">여행 날짜별 식당 찾기</div><div class="food-day-filter" id="food-day-filter"></div><div class="categorychips" id="foodchips"></div><div class="collection" id="foodlist"></div></section>
 <section id="stay" class="view"><div class="sectionlabel">04 / STAY & MOVE</div><div class="hrow"><h2>숙소와 교통</h2></div><div class="collection" id="staylist"></div></section>
@@ -318,7 +367,7 @@ function setDayCategory(c){dayCategory=c;renderEvents()}
 function setFoodDay(v){foodDay=v;renderFood()}
 function renderDates(){$('#dates').innerHTML=dates.map((d,i)=>`<button class="date ${selected===i?'on':''}" onclick="pickDay(${i})"><b>${d[0]}</b><small>${d[1]}요일</small></button>`).join('')}
 function pickDay(i){selected=i;renderDates();renderEvents()}
-function renderEvents(){let d=dates[selected];$('#dayimg').src=selected>=5&&selected<=6?photo.ninh:selected>=1&&selected<=4?photo.sapa:dayHeroHanoi;$('#dayimg').onerror=function(){this.onerror=null;this.src='icon-512.png'};$('#daynum').textContent=`DAY ${String(selected+1).padStart(2,'0')} · 2026년 ${d[0]}`;$('#daytitle').textContent=d[2];$('#daysub').textContent=d[3];let allDay=data.filter(x=>Number(x.day)===selected);
+function renderEvents(){let d=dates[selected];$('#dayimg').src=selected>=5&&selected<=6?photo.ninh:selected>=1&&selected<=4?photo.sapa:photo.hanoi;$('#dayimg').onerror=function(){this.onerror=null;this.src='icon-512.png'};$('#daynum').textContent=`DAY ${String(selected+1).padStart(2,'0')} · 2026년 ${d[0]}`;$('#daytitle').textContent=d[2];$('#daysub').textContent=d[3];let allDay=data.filter(x=>Number(x.day)===selected);
 const categories=[['all','전체'],['spot','📍 관광'],['food','🍜 식사'],['hotel','🏨 숙소'],['move','🚐 교통']];
 $('#day-filter-bar').innerHTML=categories.map(([key,name])=>`<button type="button" class="${dayCategory===key?'on':''}" onclick="setDayCategory('${key}')">${name} <span>${key==='all'?allDay.length:allDay.filter(e=>e.cat===key).length}</span></button>`).join('');
 let a=dayCategory==='all'?allDay:allDay.filter(x=>x.cat===dayCategory);
