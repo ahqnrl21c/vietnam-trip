@@ -17,7 +17,61 @@ body{background:#e6eef9;color:#172b48;font-family:'Noto Sans KR',sans-serif}.app
 @media(max-width:850px){.sidebar{width:67px;flex-basis:67px;padding:16px 5px}.brand{font-size:0}.brand .plane{font-size:28px}.brand small{display:none}.sidenav button{justify-content:center;font-size:0;padding:12px 0}.sidenav .ico{font-size:20px}.side-art{font-size:30px}.masthead{padding:19px}.main-grid{grid-template-columns:1fr}.sidepanels{grid-template-columns:1fr 1fr}.regions .region{height:160px}.region .regtext{font-size:18px}}
 @media(max-width:560px){.dashboard{display:block}.sidebar{position:fixed;bottom:0;top:auto;width:100%;height:62px;min-height:0;flex-direction:row;padding:3px 5px;overflow-x:auto}.brand,.side-art{display:none}.sidenav{display:flex;gap:2px;width:max-content;min-width:100%}.sidenav button{min-width:61px;display:grid;justify-items:center;font-size:9px;gap:0;padding:5px 2px}.sidenav .ico{font-size:18px}.masthead{height:145px;padding:15px}.masthead h1{font-size:22px}.masthead p{font-size:11px}.content-area{padding:0 9px 75px}.regions{gap:5px}.region{border-radius:11px!important;height:125px!important}.region .regtext{font-size:15px;left:8px;bottom:10px}.region .regtext small{font-size:10px}.region .arrow{display:none}.panel{padding:12px}.sidepanels{grid-template-columns:1fr}.dashboard .date{min-width:49px;flex:0 0 49px}.main-grid{gap:9px}}
 </style>
-</head><body>
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="베트남 여행"><meta name="mobile-web-app-capable" content="yes"><link rel="apple-touch-icon" sizes="180x180" href="./icon-180.png"><link rel="manifest" href="./manifest.webmanifest"><meta name="theme-color" content="#18365e"><style>
+@media(max-width:560px){.sidebar{padding-bottom:env(safe-area-inset-bottom);height:calc(66px + env(safe-area-inset-bottom));overflow-x:auto;overscroll-behavior-x:contain}.content-area{padding-bottom:calc(94px + env(safe-area-inset-bottom))}.sidenav button{min-width:70px;min-height:56px}.region{min-width:0}.regions{grid-template-columns:repeat(3,minmax(0,1fr))}.masthead{padding-top:max(15px,env(safe-area-inset-top))}.dashboard .date{touch-action:manipulation}}
+html{-webkit-text-size-adjust:100%}button,a{-webkit-tap-highlight-color:transparent}input,textarea,select{font-size:16px!important}
+
+/* iPhone layout refinement — desktop styles untouched */
+@media (max-width:560px){
+ html,body{width:100%;overflow-x:hidden}
+ .dashboard,.workspace,.content-area{width:100%;min-width:0}
+ .masthead{height:164px;padding:17px 16px 12px;background-position:center center}
+ .datepill{font-size:11px;padding:7px 12px}
+ .masthead h1{font-size:clamp(19px,5.2vw,24px);line-height:1.3;letter-spacing:-1px;margin:13px 0 7px;overflow-wrap:break-word}
+ .masthead p{font-size:11px;line-height:1.4}
+ .content-area{padding:0 11px calc(100px + env(safe-area-inset-bottom))}
+ .regions{gap:7px;margin-top:-8px;grid-template-columns:repeat(3,minmax(0,1fr))}
+ .region{height:118px!important;border-radius:12px!important;border-width:2px}
+ .region img{object-position:center}
+ .region .regtext{font-size:15px;left:9px;bottom:10px;line-height:1.3;text-shadow:0 1px 4px #0008}
+ .region .regtext small{font-size:10px;margin-top:2px}
+ .main-grid{margin-top:12px;gap:12px}
+ .panel{padding:15px 13px;border-radius:17px}
+ .panel-head h2{font-size:17px;margin-bottom:12px}
+ .panel-head button{font-size:11px;white-space:nowrap}
+ .dashboard .sectionlabel{margin:11px 0 7px;font-size:9px}
+ .dashboard .hrow h2{font-size:19px;margin-bottom:8px}
+ .dashboard .dates{gap:5px;padding:3px 0 10px;scroll-snap-type:x proximity}
+ .dashboard .date{flex:0 0 51px;min-width:51px;padding:8px 1px;scroll-snap-align:start}
+ .dashboard .date b{font-size:12px}.dashboard .date small{font-size:9px}
+ .dashboard .daybanner{margin-bottom:5px}.dashboard .daytext{padding:9px 10px}
+ .dashboard .daytext small{font-size:9px}.dashboard .daytext h3{font-size:13px;margin-left:6px}
+ .dashboard .daytext p{font-size:10px}
+ .dashboard .event{padding:9px 0;gap:5px}
+ .dashboard .timecol{width:59px;gap:3px;padding-top:6px}
+ .dashboard .timecol span{font-size:10px;min-width:30px}
+ .dashboard .timecol i{font-size:14px}
+ .dashboard .event h4{font-size:12px;line-height:1.45;margin:2px 0}
+ .dashboard .event p{font-size:10px;line-height:1.45;margin-bottom:5px}
+ .dashboard .type{font-size:8px;letter-spacing:1px}
+ .dashboard .action{padding:5px 7px;font-size:10px}
+ .dashboard .add{margin:9px 0 0;padding:11px}
+ .sidepanels{grid-template-columns:1fr;gap:12px}
+ .quickgrid button{padding:11px 3px}.quickgrid b{font-size:20px}
+ .sidebar{position:fixed;top:auto;bottom:0;left:0;right:0;width:100%;height:calc(62px + env(safe-area-inset-bottom));padding:3px 4px env(safe-area-inset-bottom);overflow-x:auto;overflow-y:hidden;z-index:100;box-shadow:0 -4px 14px #112c5140;scrollbar-width:none}
+ .sidebar::-webkit-scrollbar{display:none}
+ .sidenav{display:flex;gap:2px;min-width:max-content;width:max-content;height:58px;align-items:stretch}
+ .sidenav button{flex:0 0 66px;min-width:66px;min-height:55px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px;font-size:10px;line-height:1.15;padding:5px 3px;border-radius:8px;background:transparent;color:#e8f0ff}
+ .sidenav .ico{font-size:20px;width:auto;line-height:1.1}
+ .sidenav button.active{background:#3679ce;color:white}
+ .sidenav button:not(.active):hover{background:transparent;color:#e8f0ff}
+ .inner-page{margin-top:12px;min-height:calc(100vh - 340px)}
+ .inner-page .collection{grid-template-columns:1fr}
+ .modal{z-index:110}
+}
+@media (max-width:375px){.masthead h1{font-size:19px}.region .regtext{font-size:13px}.sidenav button{flex-basis:62px;min-width:62px}}
+@media (min-width:561px){.sidenav button:not(.active):hover{background:#294f85}}
+</style></head><body>
 <div class="dashboard" id="dashboard">
 <aside class="sidebar"><div class="brand"><span class="plane">✈</span>Hanoi · Sapa ·<br>Ninh Binh<br><small>Travel Guidebook</small></div><nav class="sidenav" id="dashnav">
 <button class="active" data-page="home"><span class="ico">⌂</span>홈</button><button data-page="schedule"><span class="ico">▦</span>여행 일정</button><button data-page="places"><span class="ico">♧</span>방문 명소</button><button data-page="stay"><span class="ico">▤</span>숙소</button><button data-page="food"><span class="ico">♨</span>맛집</button><button data-page="map"><span class="ico">◫</span>지도</button><button data-page="check"><span class="ico">☑</span>체크리스트</button><button data-page="memo"><span class="ico">▤</span>메모</button><button data-page="photos"><span class="ico">▧</span>내 사진</button><button data-page="settings"><span class="ico">⚙</span>설정 / 백업</button></nav><div class="side-art">♜</div></aside>
@@ -169,4 +223,4 @@ showPage('home');
  document.head.appendChild(style);
  document.querySelectorAll('[id^="region-"]').forEach(el=>{let k=el.id.slice(7);if(pics[k]&&!el.getAttribute('src'))el.src=pics[k]});
 })();
-</script></body></html>
+</script><script>if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}))}</script></body></html>
